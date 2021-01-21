@@ -25,6 +25,7 @@ namespace AuditExample
 			context.Persons.Add(new Person() { Id = 1, Name = "Alice", Departments = context.Departments.ToList() });
 			context.Persons.Add(new Person() { Id = 2, Name = "Bob", Departments = context.Departments.ToList() });
 
+			// ArgumentNullException will be thrown here: Value cannot be null. (Parameter 'name')
 			context.SaveChanges();
 		}
 	}

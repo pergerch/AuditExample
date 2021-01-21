@@ -1,6 +1,8 @@
 # AuditExample
 
+Repository to demonstrate the many-to-many relationship issue with Audit.NET.
 
+Error: `Value cannot be null. (Parameter 'name')`
 
 ----
 
