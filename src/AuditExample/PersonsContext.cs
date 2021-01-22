@@ -11,8 +11,6 @@ namespace AuditExample
 	{
 		public DbSet<Department> Departments { get; set; }
 
-		public DbSet<Person> Persons { get; set; }
-
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			optionsBuilder.UseSqlite("Data Source=database.db").UseLazyLoadingProxies();
@@ -20,7 +18,8 @@ namespace AuditExample
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Person>().HasMany<Department>(x => x.Departments).WithMany(x => x.Persons);
+			modelBuilder.Entity<Person>().OwnsOne(x => x.Address);
+			modelBuilder.Entity<Department>().OwnsOne(x => x.Address);
 		}
 	}
 }

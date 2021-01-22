@@ -4,14 +4,12 @@
 
 namespace AuditExample
 {
-	using System.Collections.Generic;
-
 	public class Department
 	{
+		public Address Address { get; set; }
+
 		public int Id { get; set; }
 
 		public string Name { get; set; }
-
-		public virtual ICollection<Person> Persons { get; set; }
 	}
 }
