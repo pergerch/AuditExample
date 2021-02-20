@@ -8,10 +8,10 @@ namespace AuditExample
 
 	public class Person
 	{
+		public List<Address> Addresses { get; set; }
+
 		public int Id { get; set; }
 
 		public string Name { get; set; }
-
-		public Address Address { get; set; }
 	}
 }

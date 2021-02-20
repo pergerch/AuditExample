@@ -4,6 +4,7 @@
 
 namespace AuditExample
 {
+	using System.Collections.Generic;
 	using Audit.Core;
 
 	public class Program
@@ -21,7 +22,14 @@ namespace AuditExample
 				Id = 1, Name = "Development", Address = new Address { City = "Vienna", Street = "First Street" },
 			});
 
-			// ArgumentNullException will be thrown here: Value cannot be null. (Parameter 'name')
+			context.Persons.Add(new Person()
+			{
+				Id = 1,
+				Name = "Development",
+				Addresses = new List<Address> { new Address { City = "Vienna", Street = "First Street" } },
+			});
+
+			// ArgumentNullException will be thrown here: Value cannot be null. (Parameter 'key')
 			context.SaveChanges();
 		}
 	}
